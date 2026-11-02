@@ -1,0 +1,23 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: rutas-web
+spec:
+  parentRefs:
+    - name: ## COMPLETAR
+      sectionName: http
+
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: ## COMPLETAR
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: ## COMPLETAR
+          port: 80
