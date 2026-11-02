@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
-  name: mi-deployment
+  name: mi-deployment-apache
+
 spec:
   replicas: 1
   selector:
     matchLabels:
-      componente: web
+      ## COMPLETAR
+
   template:
     metadata:
       labels:
-        componente: web
+        ## COMPLETAR
+
     spec:
       containers:
-      - name: mi-pod
-        image: httpd
-        ports:
-        - containerPort: 80
+        - name: mi-pod-apache
+          image: httpd
+          ports:
+            - containerPort: 80
